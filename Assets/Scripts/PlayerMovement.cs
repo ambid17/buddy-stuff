@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using FishNet.Managing.Logging;
+using FishNet.Object;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     [Header("Set In Editor")]
     public LayerMask layersToIgnore;
