@@ -1,9 +1,11 @@
-﻿using System;
+﻿using FishNet.Object;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
-public class CameraMove : MonoBehaviour
+public class CameraMove : NetworkBehaviour
 {
     public GameObject playerModel;
 
@@ -11,6 +13,7 @@ public class CameraMove : MonoBehaviour
     public float sensitivityMultiplier;
 
     public Camera playerCamera;
+    public Transform cameraHolder;
     public Quaternion TargetRotation { private set; get; }
 
     private const float maxCameraXRotation = 90;
@@ -27,15 +30,25 @@ public class CameraMove : MonoBehaviour
         TargetRotation = transform.rotation;
     }
 
-    private void Start()
+    public override void OnStartClient()
     {
+        base.OnStartClient();
+        if (!IsOwner)
+        {
+            this.enabled = false;
+            return;
+        }
+
+        playerCamera = Camera.main;
+        playerCamera.transform.parent = cameraHolder;
+        playerCamera.transform.localPosition = new Vector3(0, -.25f, 0);
         sensitivityMultiplier = OptionsPreferencesManager.GetSensitivity();
         playerCamera.fieldOfView = OptionsPreferencesManager.GetCameraFOV();
     }
 
     private void Update()
     {
-        if (Time.timeScale == 0)
+        if (!IsOwner || playerCamera == null || Time.timeScale == 0)
         {
             return;
         }

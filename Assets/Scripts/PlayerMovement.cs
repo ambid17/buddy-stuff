@@ -36,17 +36,27 @@ public class PlayerMovement : NetworkBehaviour
         noClip = false;
     }
 
-    private void Start()
+    public override void OnStartClient()
     {
+        base.OnStartClient();
+        if (!IsOwner)
+        {
+            this.enabled = false;
+            return;
+        }
+
         controller = GetComponent<CharacterController>();
         cameraMove = GetComponent<CameraMove>();
-
         shouldJumpOnScroll = OptionsPreferencesManager.GetJumpOnScroll();
     }
 
     // All input checking going in Update, so no Input queries are missed
     private void Update()
     {
+        if (!IsOwner)
+        {
+            return;
+        }
         if (noClip)
         {
             NoClipMove();
