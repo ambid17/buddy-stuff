@@ -220,9 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861d1a247193775449efdf220489fa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 255
+  _componentIndexCache: 5
   _addedNetworkObject: {fileID: 3473088802264193511}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 3473088802264193511}
   _text: {fileID: 215194267245155187}
 --- !u!1 &7256682531046529227
 GameObject:
@@ -302,9 +302,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c569f7519a168b42b26d989eb57019c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 255
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 3473088802264193511}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 3473088802264193511}
   playerModel: {fileID: 6075459116581491540}
   playerCamera: {fileID: 0}
   cameraHolder: {fileID: 7627962252642125902}
@@ -320,14 +320,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e84c453b19f63f488b617e3f0c55118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 255
+  _componentIndexCache: 2
   _addedNetworkObject: {fileID: 3473088802264193511}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 3473088802264193511}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
   cameraMove: {fileID: 7044307084512097608}
   objectControlled: {fileID: 0}
+  netObjectControlled: {fileID: 0}
   pickupTargetPosition: {x: 0, y: 0, z: 0}
 --- !u!143 &1027760633357723833
 CharacterController:
@@ -372,7 +373,11 @@ MonoBehaviour:
   <PredictedOwner>k__BackingField: {fileID: 0}
   NetworkBehaviours:
   - {fileID: 7579080192046762345}
-  - {fileID: 0}
+  - {fileID: 7044307084512097608}
+  - {fileID: 2064206489057141669}
+  - {fileID: 3336251011602031039}
+  - {fileID: 6030984502992431427}
+  - {fileID: 8592763517143511760}
   InitializedParentNetworkBehaviour: {fileID: 0}
   InitializedNestedNetworkObjects: []
   RuntimeParentNetworkBehaviour: {fileID: 0}
@@ -384,7 +389,7 @@ MonoBehaviour:
   _preventDespawnOnDisconnect: 0
   _defaultDespawnType: 0
   NetworkObserver: {fileID: 0}
-  _enablePrediction: 0
+  _enablePrediction: 1
   _predictionType: 0
   _graphicalObject: {fileID: 0}
   _detachGraphicalObject: 0
@@ -396,7 +401,7 @@ MonoBehaviour:
   _spectatorSmoothedProperties: 255
   _spectatorInterpolation: 2
   _enableTeleport: 0
-  _teleportThreshold: 1
+  _teleportThreshold: 40
   <PrefabId>k__BackingField: 1
   <SpawnableCollectionId>k__BackingField: 0
   <AssetPathHash>k__BackingField: 7807759643866311769
@@ -418,13 +423,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 255
+  _componentIndexCache: 3
   _addedNetworkObject: {fileID: 3473088802264193511}
-  _networkObjectCache: {fileID: 0}
-  _componentConfiguration: 0
+  _networkObjectCache: {fileID: 3473088802264193511}
+  _componentConfiguration: 1
   _synchronizeParent: 0
   _packing:
-    Position: 1
+    Position: 0
     Rotation: 1
     Scale: 0
   _interpolation: 2
@@ -530,9 +535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 255
+  _componentIndexCache: 4
   _addedNetworkObject: {fileID: 3473088802264193511}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 3473088802264193511}
   _componentConfiguration: 0
   _synchronizeParent: 0
   _packing:
