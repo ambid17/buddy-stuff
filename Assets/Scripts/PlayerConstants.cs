@@ -33,7 +33,8 @@ public static class PlayerConstants
 
     public static float portalWidth = 3f;
     public static float portalHeight = 3f;
-    public static float PortalRaycastDistance = 250;
+    public static float pickupDistance = 5f;
+    public static float pickupForce = 4f;
 
 
     // Layer Masks
